@@ -1,0 +1,1 @@
+printf("\n First Element of array has values of a = [%d] and c = [%s]\n", st_arr[0].a, st_arr[0].c);
