@@ -28,7 +28,7 @@ function draw() {
 
   for (let i = 0; i < detections.length; i++) {
     let object = detections[i];
-    if(object.label == "person"){
+    if (object.label == "person") {
       stroke(255, 0, 0);
       strokeWeight(4);
       noFill();
@@ -37,6 +37,7 @@ function draw() {
       fill(255);
       textSize(24);
       text(object.label, object.x + 10, object.y + 24);
+      text(Number(object.confidence).toFixed(2), object.x + 500, object.y + 24);
     } else {
       stroke(0, 255, 0);
       strokeWeight(4);
@@ -46,7 +47,7 @@ function draw() {
       fill(255);
       textSize(24);
       text(object.label, object.x + 10, object.y + 24);
+      text(Number(object.confidence).toFixed(2), object.x + 20, object.y + 48);
     }
-    //text(object.confidence, object.x + 20, object.y + 24);
   }
 }
