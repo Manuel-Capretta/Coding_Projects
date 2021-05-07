@@ -23,7 +23,7 @@ int binarySearch(int arr[], int n, int x){
 	while(l <= r){
     int m = l + (r-l)/2;				//middle
     
-    if(arr[m] == x){						//if x is present at mid
+    if(arr[m] == x){					//if x is present at mid
         return m;  
 		} else if(arr[m] < x){ 			//if x is present in the right half
         l = m + 1;
