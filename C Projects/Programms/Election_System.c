@@ -112,19 +112,25 @@ int main() {
   Voter_arr[7] = Voter_obj7;
   Voter_arr[8] = Voter_obj8;
   Voter_arr[9] = Voter_obj9;
+
+  //print the name of the voters
+  //printf("These are the Voters names: \n");
+  /*for(int i = 0; i < 11; i++){
+    printf("%s", Voter_arr[i]);
+  }*/
 /*****************************************************************************************************/
  
   printf("This is an Election System. It works very simple. Here are the Rules: \n - Press the 'A' Key to Vote for Side A \n - Press the 'B' Key to Vote for Side B \n - Any other Key pressed during the election time won't count as a vote\n First off, let's get the Vorters Names.\n"); 
   printf("Voting's up. Vote with 1 (for Side A) and 2 (for Side B). \n Let The Voting Beginn. Input the votes now: ");
 
-  election(Votes, side_a, side_b /*,Voter_arr[]*/);
+  election(Votes, side_a, side_b);
 }
 
 
 
 
 
-void election(Votes, side_a, side_b /*,Voter_arr[]*/){
+void election(Votes, side_a, side_b ){
   int vote_a = 0, vote_b = 0, Input_vote;
   int voting_done = false;
 
@@ -171,7 +177,6 @@ void election(Votes, side_a, side_b /*,Voter_arr[]*/){
 
   if(voting_done){
     for(int i = 0; i < 10; i++){
-      //printf("\n Voter %D \n Name: %s \n Vote: %d\n", i, Voter_arr[i].name, Voter_arr[i].vote);
     }
   }
 }
