@@ -1,0 +1,23 @@
+/*-----------------------------------------------Websitenlayout-----------------------------------------------*/
+/*- Schriftart Sans-Serif für alle elemente mit Schrift -*/
+* {
+  font-family: sans-serif;
+}
+
+/*- Gridlayout mit Text, Logo, Bild, etc... -*/
+.Grid { 
+  display: grid; 
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px; 
+  grid-gap: 10px;
+
+} 
+.box1 { 
+  grid-row: 1/1;
+  grid-column: 1/1; 
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: 1px solid black;
+} 
