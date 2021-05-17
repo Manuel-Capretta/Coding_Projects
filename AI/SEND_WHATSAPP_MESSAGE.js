@@ -4,7 +4,7 @@ const client = require('twilio')(accountSid, authToken);
  
 client.messages 
       .create({ 
-         body: 'Hello!', 
+         body: 'Hello Stefan', 
          from: 'whatsapp:+14155238886',       
          to: 'whatsapp:+41792231242' 
        }) 
