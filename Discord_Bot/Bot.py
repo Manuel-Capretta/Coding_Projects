@@ -21,4 +21,4 @@ async def on_connect(message):
     return
   await message.channel.send('Hello!')
   
-Client.run('ODQ1NjY1MjA0Nzc2MDc1MzU1.YKkRGA.7HW5edsjVMiLK1pcTNBPi4STjOE') #token
+Client.run('TOKEN') #token is renewed
