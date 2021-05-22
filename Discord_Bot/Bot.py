@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 
 Client = commands.Bot(command_prefix='--') #Get the command bot. Set prfic to '--'
-tokenClient = discord.Client()
 
 @Client.command(name='version')
 async def version(context):
@@ -16,14 +15,4 @@ async def version(context):
   #Send embeded message
   await context.message.channel.send(embed=versionEmbed)
 
-@tokenClient.event
-async def on_message(message):
-   if message.content.startswith('pls traps'):
-    await message.channel.send('No traps plz')
-
-@tokenClient.event
-async def on_connect():
-   print("Bot ready")
-  
 Client.run('TOKEN') #token
-tokenClient.run('TOKEN') #token
