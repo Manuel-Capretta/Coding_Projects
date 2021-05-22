@@ -5,7 +5,6 @@ Client = commands.Bot(command_prefix='--') #Get the command bot. Set prfic to '-
 
 
 
-
 @Client.command(name='version')
 async def version(context):
   #Create Embeded message
@@ -38,9 +37,6 @@ async def Syntax(context):
 
   Note: All spaces MUST be replaced with an UNDERSCORE !!!
   """)
-
-
-
 
 @Client.command(name='binary_search_py')
 async def Help(context):
@@ -274,7 +270,6 @@ async def Help(context):
   (result == -1) ? document.write("Element is not present in array")
                 : document.write ("Element is present at index " + result);
   """)
-
 
 
 
