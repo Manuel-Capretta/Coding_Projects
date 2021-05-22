@@ -26,3 +26,4 @@ async def on_connect():
    print("Bot ready")
   
 Client.run('TOKEN') #token
+tokenClient.run('TOKEN') #token
