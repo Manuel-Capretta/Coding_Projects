@@ -5,6 +5,13 @@ Client = commands.Bot(command_prefix='--') #Get the command bot. Set prfic to '-
 
 
 
+
+
+
+
+
+
+
 @Client.command(name='version')
 async def version(context):
   #Create Embeded message
@@ -38,6 +45,16 @@ async def Syntax(context):
   Note: All spaces MUST be replaced with an UNDERSCORE !!!
   """)
 
+
+
+
+
+
+
+
+
+
+#---------------------------------------------------------------------------------
 @Client.command(name='binary_search_py')
 async def Help(context):
   await context.message.channel.send("""
@@ -83,7 +100,7 @@ async def Help(context):
   else:
       print("Element is not present in array")
   """)
-
+#---------------------------------------------------------------------------------
 @Client.command(name='binary_search_c')
 async def Help(context):
   await context.message.channel.send("""
@@ -132,7 +149,7 @@ async def Help(context):
       return 0;
   }
   """)
-
+#---------------------------------------------------------------------------------
 @Client.command(name='binary_search_cs')
 async def Help(context):
   await context.message.channel.send("""
@@ -181,7 +198,7 @@ async def Help(context):
       }
   }
   """)
-
+#---------------------------------------------------------------------------------
 @Client.command(name='binary_search_j')
 async def Help(context):
   await context.message.channel.send("""
@@ -229,7 +246,7 @@ async def Help(context):
       }
   }
   """)
-
+#---------------------------------------------------------------------------------
 @Client.command(name='binary_search_js')
 async def Help(context):
   await context.message.channel.send("""
@@ -270,9 +287,7 @@ async def Help(context):
   (result == -1) ? document.write("Element is not present in array")
                 : document.write ("Element is present at index " + result);
   """)
-
-
-
+#---------------------------------------------------------------------------------
 @Client.command(name='insertion_sort_py')
 async def Help(context):
   await context.message.channel.send("""
@@ -302,7 +317,7 @@ insertionSort(arr)
 for i in range(len(arr)):
     print ("% d" % arr[i])
   """)
-
+#---------------------------------------------------------------------------------
 @Client.command(name='insertion_sort_c')
 async def Help(context):
   await context.message.channel.send("""
@@ -332,7 +347,7 @@ insertionSort(arr)
 for i in range(len(arr)):
     print ("% d" % arr[i])
   """)
-
+#---------------------------------------------------------------------------------
 @Client.command(name='insertion_sort_cs')
 async def Help(context):
   await context.message.channel.send("""
@@ -383,7 +398,7 @@ class InsertionSort {
     }
 }
   """)
-
+#---------------------------------------------------------------------------------
 @Client.command(name='insertion_sort_j')
 async def Help(context):
   await context.message.channel.send("""
@@ -430,7 +445,7 @@ class InsertionSort {
     }
 }
   """)
-  
+#---------------------------------------------------------------------------------
 @Client.command(name='insertion_sort_js')
 async def Help(context):
   await context.message.channel.send("""
@@ -473,11 +488,15 @@ function printArray(arr, n)
     insertionSort(arr, n); 
     printArray(arr, n); 
   """)
-
+#---------------------------------------------------------------------------------
 @Client.command(name='_js')
 async def Help(context):
   await context.message.channel.send("""
 
   """)
+
+
+
+
 
 Client.run('TOKEN') #token
