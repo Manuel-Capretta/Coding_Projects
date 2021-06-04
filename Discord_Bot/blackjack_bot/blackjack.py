@@ -16,8 +16,8 @@ def deal(deck):
     return hand
 
 def play_again():
-    again = input("Do you want to play again? (Y/N) : ").lower()
-    if again == "y":
+    again = input("Do you want to play again? (Y/N) : ")
+    if again.lower() == "y":
 	    '''dealer_hand = []
 	    player_hand = []
 	    deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]*4'''
