@@ -123,14 +123,14 @@ int main() {
   printf("This is an Election System. It works very simple. Here are the Rules: \n - Press the 'A' Key to Vote for Side A \n - Press the 'B' Key to Vote for Side B \n - Any other Key pressed during the election time won't count as a vote\n First off, let's get the Vorters Names.\n"); 
   printf("Voting's up. Vote with 1 (for Side A) and 2 (for Side B). \n Let The Voting Beginn. Input the votes now: ");
 
-  election(Votes, side_a, side_b /*, *Voter_arr[10]*/);
+  election(Votes, side_a, side_b);
 }
 
 
 
 
 
-void election(Votes, side_a, side_b /*, Voter[10]*/){
+void election(Votes, side_a, side_b){
   int vote_a = 0, vote_b = 0, Input_vote;
   int voting_done = false;
 
