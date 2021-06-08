@@ -32,7 +32,7 @@ def total(hand):
 	    if card == "J" or card == "Q" or card == "K":
 	        total+= 10
 	    elif card == "A":
-	        if total >= 11: 
+	        if total >= 1: 
 	        	total+= 1
 	    else: 
 	  		  total+= 11
