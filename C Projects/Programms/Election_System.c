@@ -18,6 +18,7 @@ struct Voter {
 
 int main() {
   int Votes = 0;
+	int maxVotes = 10;
   int side_a = 0;
   int side_b = 0;
 
@@ -112,20 +113,20 @@ int main() {
   printf("This is an Election System. It works very simple. Here are the Rules: \n - Press the 'A' Key to Vote for Side A \n - Press the 'B' Key to Vote for Side B \n - Any other Key pressed during the election time won't count as a vote\n First off, let's get the Vorters Names.\n"); 
   printf("Voting's up. Vote with 1 (for Side A) and 2 (for Side B). \n Let The Voting Beginn. Input the votes now: ");
 
-  election(Votes, side_a, side_b);
+  election(Votes, maxVotes, side_a, side_b);
 }
 
 
 
 
 
-void election(Votes, side_a, side_b){
+void election(Votes, maxVotes, side_a, side_b){
   int vote_a = 0, vote_b = 0, Input_vote;
   int voting_done = false;
 
   //Check for the Vote given by the Voter 
   scanf("%d", & Input_vote);
-  if (Votes < 10) {
+  if (Votes < maxVotes) {
     switch (Input_vote){
       case 1:
       Input_vote = 0;
@@ -148,7 +149,7 @@ void election(Votes, side_a, side_b){
   }
 
   //Check weather or not the Voting time has exceeded and perform a recursive algorythm if it didn't
-  if (Votes < 10) {
+  if (Votes < maxVotes) {
     election(Votes, side_a, side_b);
   } else {
     printf("\nVoting's up. Time for the results:");
@@ -162,11 +163,6 @@ void election(Votes, side_a, side_b){
     } else {
       printf("\nIt's a Draw. Noone won the election");
       voting_done = true;
-    }
-  }
-
-  if(voting_done){
-    for(int i = 0; i < 10; i++){
     }
   }
 }
