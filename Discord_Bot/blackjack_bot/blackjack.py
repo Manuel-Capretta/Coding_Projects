@@ -1,7 +1,7 @@
 import os
 import random
 
-deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
 def deal(deck):
     hand = []
@@ -18,9 +18,9 @@ def deal(deck):
 def play_again():
     again = input("Do you want to play again? (Y/N) : ")
     if again.lower() == "y":
-	    '''dealer_hand = []
+	    dealer_hand = []
 	    player_hand = []
-	    deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]*4'''
+	    deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 	    game()
     else:
 	    print("Bye!")
