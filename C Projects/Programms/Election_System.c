@@ -62,43 +62,43 @@ int main() {
 
   //Voters
   struct Voter Voter_obj0;
-  Voter_obj0.vote;
+  //Voter_obj0.vote;
   strncpy(Voter_obj0.name, Input_name0, 20);
 
   struct Voter Voter_obj1;
-  Voter_obj1.vote;
+  //Voter_obj1.vote;
   strncpy(Voter_obj1.name, Input_name1, 20);
 
   struct Voter Voter_obj2;
-  Voter_obj2.vote;
+  //Voter_obj2.vote;
   strncpy(Voter_obj2.name, Input_name2, 20);
 
   struct Voter Voter_obj3;
-  Voter_obj3.vote;
+  //Voter_obj3.vote;
   strncpy(Voter_obj3.name, Input_name3, 20);
 
   struct Voter Voter_obj4;
-  Voter_obj4.vote;
+  //Voter_obj4.vote;
   strncpy(Voter_obj4.name, Input_name4, 20);
 
   struct Voter Voter_obj5;
-  Voter_obj5.vote;
+  //Voter_obj5.vote;
   strncpy(Voter_obj5.name, Input_name5, 20);
 
   struct Voter Voter_obj6;
-  Voter_obj6.vote;
+  //Voter_obj6.vote;
   strncpy(Voter_obj6.name, Input_name6, 20);
 
   struct Voter Voter_obj7;
-  Voter_obj7.vote;
+  //Voter_obj7.vote;
   strncpy(Voter_obj7.name, Input_name7, 20);
 
   struct Voter Voter_obj8;
-  Voter_obj8.vote;
+  //Voter_obj8.vote;
   strncpy(Voter_obj8.name, Input_name8, 20);
 
   struct Voter Voter_obj9;
-  Voter_obj9.vote;
+  //Voter_obj9.vote;
   strncpy(Voter_obj9.name, Input_name9, 20);
 
   //Assign Voters to their place in the Voter Array
@@ -114,10 +114,10 @@ int main() {
   Voter_arr[9] = Voter_obj9;
 
   //print the name of the voters
-  //printf("These are the Voters names: \n");
-  /*for(int i = 0; i < 11; i++){
-    printf("%s", Voter_arr[i]);
-  }*/
+  printf("These are the Voters names: \n");
+  for(int i = 0; i <= 10; i++){
+    printf("%s", Voter_arr[i].name);
+  }
 /*****************************************************************************************************/
  
   printf("This is an Election System. It works very simple. Here are the Rules: \n - Press the 'A' Key to Vote for Side A \n - Press the 'B' Key to Vote for Side B \n - Any other Key pressed during the election time won't count as a vote\n First off, let's get the Vorters Names.\n"); 
