@@ -5,7 +5,7 @@ deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7
 
 def deal(deck):
     hand = []
-    for i in range(2):
+    for i in range(1):
 	    random.shuffle(deck)
 	    card = deck.pop()
 	    if card == 11:card = "J"
