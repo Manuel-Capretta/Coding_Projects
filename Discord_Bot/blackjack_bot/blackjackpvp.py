@@ -108,27 +108,24 @@ def score(player2_hand, player_hand):
 		print("Player 2 busts. You win!\n")
 	elif total(player_hand) < total(player2_hand):
 		print_results(player2_hand, player_hand)
-		print("Sorry Player 1. Your score isn't higher than the score of Player 2.- You lose.\n")
+		print("Sorry Player 1. Your score isn't higher than the score of Player 2. You lost.\n")
 	elif total(player_hand) > total(player2_hand):
 		print_results(player2_hand, player_hand)			   
 		print("Congratulations Player 1. Your score is higher than the score of Player 2. You win\n")		
 
-def pchoice(player_hand, player2_hand):
-	choice = 0
+def pchoice(player_hand, player2_hand, choice):
 	choice = input("Player 1: Do you want to [H]it, [S]tand, or [Q]uit: ").lower()
 	#players choice
 	if choice == "h":
 		hit(player_hand)
-		score(player2_hand, player_hand)
 	elif choice == "s":
 		score(player2_hand, player_hand)
 	elif choice == "q":
 		print("Bye!")
 		exit()
-	return player_hand, player2_hand
+	return player_hand, player2_hand, choice
 
-def pchoice2(player2_hand, player_hand):
-	choice2 = 0
+def pchoice2(player2_hand, player_hand, choice2):
 	choice2 = input("Player 1: Do you want to [H]it, [S]tand, or [Q]uit: ").lower()
 	#players 2 choice
 	if choice2 == "h":
@@ -139,9 +136,11 @@ def pchoice2(player2_hand, player_hand):
 	elif choice2 == "q":
 		print("Bye!")
 		exit()
-	return player_hand, player2_hand
+	return player_hand, player2_hand, choice2
 
 def game():
+  choice = 0
+  choice2 = 0
   clear()
   print("WELCOME TO BLACKJACK!\n")
   player_hand = deal(deck)
@@ -151,18 +150,26 @@ def game():
     print_results(player2_hand, player_hand)
     blackjack(player2_hand, player_hand)
     if 22 > total(player_hand):
-      pchoice(player_hand, player2_hand)
+      pchoice(player_hand, player2_hand, choice)
+      if(choice == "s"):
+        pchoice2(player_hand, player2_hand, choice2)
+      elif(choice == "h"):
+        pchoice(player_hand, player2_hand, choice)
     else:
       print("Invalid Input. Please try again.")
-      pchoice(player_hand, player2_hand)
+      pchoice(player_hand, player2_hand, choice)
   else:
     print_results(player2_hand, player_hand)
     blackjack(player2_hand, player_hand)
     if 22 > total(player2_hand):
-      pchoice2(player_hand, player2_hand)
+      pchoice2(player_hand, player2_hand, choice2)
+      if(choice2 == "s"):
+        pchoice(player_hand, player2_hand, choice)
+      elif(choice2 == "h"):
+        pchoice2(player_hand, player2_hand, choice)
     else:
       print("Invalid Input. Please try again.")
-      pchoice2(player_hand, player2_hand)
+      pchoice2(player_hand, player2_hand, choice2)
 	
 if __name__ == "__main__":
    game()
