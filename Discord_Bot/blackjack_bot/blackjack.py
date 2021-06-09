@@ -27,17 +27,14 @@ def play_again():
 	    exit()
 
 def total(hand):
-    total = 0
-    for card in hand:
-	    if card == "J" or card == "Q" or card == "K":
-	        total+= 10
-	    elif card == "A":
-	        if total >= 1: 
-	        	total+= 1
-	    else: 
-	  		  total+= 11
-	    #total+= card
-    return total
+		total = 0
+		for card in hand:
+			if card == "J" or card == "Q" or card == "K": total+= 10
+			elif card == "A": 
+					if total >= 1: total+= 1; 
+					else: total+= 11 
+			else: total+= card
+		return total
 
 def hit(hand):
 	card = deck.pop()
