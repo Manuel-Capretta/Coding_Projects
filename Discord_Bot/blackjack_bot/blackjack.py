@@ -81,10 +81,10 @@ def score(dealer_hand, player_hand):
 		print("Dealer busts. You win!\n")
 	elif total(player_hand) < total(dealer_hand):
 		print_results(dealer_hand, player_hand)
-		print("Sorry. Your score isn't higher than the dealer You lose.\n")
+		print("Sorry. Your score isn't higher than the dealers. You lose.\n")
 	elif total(player_hand) > total(dealer_hand):
 		print_results(dealer_hand, player_hand)			   
-		print("Congratulations. Your score is higher than the dealer. You win\n")		
+		print("Congratulations. Your score is higher than the dealers. You win\n")		
 
 def game():
 	choice = 0
