@@ -84,7 +84,29 @@ def score(dealer_hand, player_hand):
 		print("Sorry. Your score isn't higher than the dealers. You lose.\n")
 	elif total(player_hand) > total(dealer_hand):
 		print_results(dealer_hand, player_hand)			   
-		print("Congratulations. Your score is higher than the dealers. You win\n")		
+		print("Congratulations. Your score is higher than the dealers. You win\n")
+
+def Dealers_choice(player_hand, dealer_hand):
+	if 22 > total(player_hand):
+		choice = input("Do you want to [H]it, [S]tand, or [Q]uit: ").lower()
+	else:
+		choice = "s"
+		clear()
+		#Dealers choice
+	if choice == "h":
+		hit(player_hand)
+		while total(dealer_hand) < 17:
+			hit(dealer_hand)
+		score(dealer_hand, player_hand)
+		play_again()
+	elif choice == "s":
+		while total(dealer_hand) < 17:
+			hit(dealer_hand)
+		score(dealer_hand, player_hand)
+		play_again()
+	elif choice == "q":
+		print("Bye!")
+		exit()
 
 def game():
 	choice = 0
@@ -96,27 +118,8 @@ def game():
 		print("The dealer is showing a " + str(dealer_hand[0]))
 		print("You have a " + str(player_hand) + " for a total of " + str(total(player_hand)))
 		blackjack(dealer_hand, player_hand)
-		if 22 > total(player_hand):
-			choice = input("Do you want to [H]it, [S]tand, or [Q]uit: ").lower()
-		else:
-			choice = "s"
-		clear()
 
-    #Dealers choice
-		if choice == "h":
-			hit(player_hand)
-			while total(dealer_hand) < 17:
-				hit(dealer_hand)
-			score(dealer_hand, player_hand)
-			play_again()
-		elif choice == "s":
-			while total(dealer_hand) < 17:
-				hit(dealer_hand)
-			score(dealer_hand, player_hand)
-			play_again()
-		elif choice == "q":
-			print("Bye!")
-			exit()
+		Dealers_choice(player_hand, dealer_hand)
 	
 if __name__ == "__main__":
    game()
