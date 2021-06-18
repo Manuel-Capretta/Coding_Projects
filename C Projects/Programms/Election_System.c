@@ -127,20 +127,19 @@ void election(Votes, maxVotes, side_a, side_b){
   //Check for the Vote given by the Voter 
   scanf("%d", & Input_vote);
   if (Votes < maxVotes) {
-    switch (Input_vote){
-      case 1:
+    if(Input_vote == 1){
       Input_vote = 0;
       side_a++;
       Votes++;
       printf("\n Side A: %d | Side B: %d\n\n", side_a, side_b);
       printf("Voted for Side A. %d Votes done. Next Vote: ", Votes);
-    case 2:
+    } else if(Input_vote == 2){
       Input_vote = 0;
       side_b++;
       Votes++;
       printf("\n Side A: %d | Side B: %d\n\n", side_a, side_b);
       printf("Voted for Side B. %d Votes done. Next Vote: ", Votes);
-    default:
+    } else {
       Input_vote = 0;
       Votes++;
       printf("\n Side A: %d | Side B: %d\n\n", side_a, side_b);
