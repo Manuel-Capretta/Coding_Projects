@@ -32,7 +32,6 @@ function modelLoaded() {
 }
 
 function classifyImage() {
-  
   inputImage.copy(canvas, 0, 0, 400, 400, 0, 0, 64, 64);
   //image(inputImage, 0, 0);
   shapeClassifier.classify(
@@ -48,9 +47,13 @@ function gotResults(err, results) {
     console.error(err);
     return;
   }
+
   let label = results[0].label;
   let confidence = nf(100 * results[0].confidence, 2, 0);
+
   resultsDiv.html(`${label} ${confidence}%`);
+
+  //console.log(results);
   classifyImage();
 }
 

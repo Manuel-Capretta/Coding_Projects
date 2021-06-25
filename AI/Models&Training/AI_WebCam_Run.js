@@ -15,9 +15,12 @@ function setup() {
   };
   shapeClassifier = ml5.neuralNetwork(options);
   const modelDetails = {
-    model: 'model_cam/model1.json',
+    /*model: 'model_cam/model1.json',
     metadata: 'model_cam/model_meta1.json',
-    weights: 'model_cam/model.weights1.bin'
+    weights: 'model_cam/model.weights1.bin'*/
+    model: '1MioModel/model.json',
+    metadata: '1MioModel/model_meta.json',
+    weights: '1MioModel/model.weights.bin'
   };
   background(255);
   resultsDiv = createDiv('loading model');
