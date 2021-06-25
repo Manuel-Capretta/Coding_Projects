@@ -6,6 +6,7 @@
 
 void election();
 void Voter_define();
+int done();
 
 //Voter Entity Structure
 struct Voter {
@@ -122,7 +123,6 @@ int main() {
 
 void election(Votes, maxVotes, side_a, side_b){
   int vote_a = 0, vote_b = 0, Input_vote;
-  int voting_done = false;
 
   //Check for the Vote given by the Voter 
   scanf("%d", & Input_vote);
@@ -132,17 +132,26 @@ void election(Votes, maxVotes, side_a, side_b){
       Votes++;
       printf("\n Side A: %d | Side B: %d\n\n", side_a, side_b);
       printf("Voted for Side A. %d Votes done. Next Vote: ", Votes);
+      done(Votes, maxVotes, side_a, side_b);
     } else if(Input_vote == 2){
       side_b++;
       Votes++;
       printf("\n Side A: %d | Side B: %d\n\n", side_a, side_b);
       printf("Voted for Side B. %d Votes done. Next Vote: ", Votes);
+      done(Votes, maxVotes, side_a, side_b);
     } else {
       Votes++;
       printf("\n Side A: %d | Side B: %d\n\n", side_a, side_b);
       printf("Invalid Vote.     %d Votes done. Next Vote: ", Votes);
+      done(Votes, maxVotes, side_a, side_b);
     }
   }
+}
+
+
+
+int done(Votes, maxVotes, side_a, side_b){
+  int voting_done = false;
 
   //Check weather or not the Voting time has exceeded and perform a recursive algorythm if it didn't
   if (Votes < maxVotes) {
@@ -161,4 +170,6 @@ void election(Votes, maxVotes, side_a, side_b){
       voting_done = true;
     }
   }
+
+  return Votes, maxVotes, side_a, side_b;
 }
