@@ -3,7 +3,7 @@ let squares = [];
 let triangles = [];
 
 function preload() {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 400; i++) {
     let index = nf(i + 1, 4, 0);
     circles[i] = loadImage(`data/circle${index}.png`);
     squares[i] = loadImage(`data/square${index}.png`);
@@ -31,7 +31,7 @@ function setup() {
     shapeClassifier.addData({ image: triangles[i] }, { label: 'triangle' });
   }
   shapeClassifier.normalizeData();
-  shapeClassifier.train({ epochs: 5 }, finishedTraining);
+  shapeClassifier.train({ epochs: 834 }, finishedTraining);
 }
 
 function finishedTraining() {
