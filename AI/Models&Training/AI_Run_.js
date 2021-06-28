@@ -12,9 +12,12 @@ function setup() {
   };
   shapeClassifier = ml5.neuralNetwork(options);
   const modelDetails = {
-    model: 'model/model.json',
+    /*model: 'model/model.json',
     metadata: 'model/model_meta.json',
-    weights: 'model/model.weights.bin'
+    weights: 'model/model.weights.bin'*/
+    model: '1MioModel/model.json',
+    metadata: '1MioModel/model_meta.json',
+    weights: '1MioModel/model.weights.bin'
   };
   background(255);
   clearButton = createButton('clear');
