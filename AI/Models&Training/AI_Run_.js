@@ -15,9 +15,9 @@ function setup() {
     /*model: 'model/model.json',
     metadata: 'model/model_meta.json',
     weights: 'model/model.weights.bin'*/
-    model: 'test_model/model.json',
-    metadata: 'test_model/model_meta.json',
-    weights: 'test_model/model.weights.bin'
+    model: 'models/test_model/model.json',
+    metadata: 'models/test_model/model_meta.json',
+    weights: 'models/test_model/model.weights.bin'
   };
   background(255);
   clearButton = createButton('clear');
