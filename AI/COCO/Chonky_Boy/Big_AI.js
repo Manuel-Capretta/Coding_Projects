@@ -64,30 +64,21 @@ function draw() {
 /*-----------------------------------------------------------------------------------------------*/
       //PoseNet
       if (pose) {
-        fill(255, 0, 0);
-        //ellipse(pose.nose.x, pose.nose.y, d);
-        //fill(255, 0, 0);
-        //ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
-        //ellipse(pose.leftWrist.x, pose.leftWrist.y, 32);
-
         //Just let the console print out some informations…
-        if(pose.rightEye){
-          console.log("------------------------------------");
-          console.log(pose.rightEye.x);
-          console.log(pose.rightEye.y);
-          image(img, pose.rightEye.x, pose.rightEye.y);             //Put an image on top of the right eye
-          console.log("------------------------------------");
-        }
-    
+        for (let i = 0; i < skeleton.length; i++) {
+          console.log(skeleton[i][0]);                                //Print out informations about detexted part
+        }                                                             //if parts should be detected specifically, use: pose.rightWrist (EX.)
+                                                                      //for their position just write pose.rightWrist.x (EX.) or .y)
+        //Ellipse
         for (let i = 0; i < pose.keypoints.length; i++) {
           let x = pose.keypoints[i].position.x;
           let y = pose.keypoints[i].position.y;
-          fill(0, 255, 0); 
+          fill(255, 0, 0); 
           let conf = nf(100 * pose.score, 2, 2);                      //numberformat the confidence score 
           text(conf, x, y + 24);                                      //show detected parts confidence
           //text(pose.part, x, y - 24);                               //show detected parts name
           
-          //ellipse(x, y, 16, 16);                          
+          ellipse(x, y, 10, 10);                                      //Show a little circle at detected location                          
         }
     
         for (let i = 0; i < skeleton.length; i++) {
@@ -95,7 +86,7 @@ function draw() {
           let b = skeleton[i][1];
           strokeWeight(2);
           stroke(255);
-          line(a.position.x, a.position.y, b.position.x, b.position.y);
+          line(a.position.x, a.position.y, b.position.x, b.position.y); //line between detected parts
         }
       }
 /*-----------------------------------------------------------------------------------------------*/
