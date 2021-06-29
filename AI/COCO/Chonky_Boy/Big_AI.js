@@ -47,6 +47,8 @@ function modelLoaded() {
 
 function draw() {
   image(video, 0, 0);
+  let img;
+  img = loadImage('s_big.png');
 
   for (let i = 0; i < detections.length; i++) {
     let object = detections[i];
@@ -59,17 +61,23 @@ function draw() {
       rect(object.x, object.y, object.width, object.height);*/
       
 
-      /*-----------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------*/
       //PoseNet
       if (pose) {
-        let eyeR = pose.rightEye;
-        let eyeL = pose.leftEye;
-        let d = dist(eyeR.x, eyeR.y, eyeL.x, eyeL.y);
         fill(255, 0, 0);
         //ellipse(pose.nose.x, pose.nose.y, d);
-        fill(0, 0, 255);
-        ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
-        ellipse(pose.leftWrist.x, pose.leftWrist.y, 32);
+        //fill(255, 0, 0);
+        //ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
+        //ellipse(pose.leftWrist.x, pose.leftWrist.y, 32);
+
+        //Just let the console print out some informations…
+        if(pose.rightEye){
+          console.log("------------------------------------");
+          console.log(pose.rightEye.x);
+          console.log(pose.rightEye.y);
+          image(img, pose.rightEye.x, pose.rightEye.y);             //Put an image on top of the right eye
+          console.log("------------------------------------");
+        }
     
         for (let i = 0; i < pose.keypoints.length; i++) {
           let x = pose.keypoints[i].position.x;
@@ -78,7 +86,8 @@ function draw() {
           let conf = nf(100 * pose.score, 2, 2);                      //numberformat the confidence score 
           text(conf, x, y + 24);                                      //show detected parts confidence
           //text(pose.part, x, y - 24);                               //show detected parts name
-          ellipse(x, y, 16, 16);
+          
+          //ellipse(x, y, 16, 16);                          
         }
     
         for (let i = 0; i < skeleton.length; i++) {
@@ -89,19 +98,7 @@ function draw() {
           line(a.position.x, a.position.y, b.position.x, b.position.y);
         }
       }
-
-      //Just let the console print out some informations…
-      if(pose.score > 0.25){
-        console.log("------------------------------------");
-        console.log("Part:");
-        console.log(pose.part);
-        console.log("Confidence:");
-        console.log(pose.score);
-        console.log("Position:");
-        console.log(pose.position);
-        console.log("------------------------------------");
-      }
-      /*-----------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------*/
     } else {
       stroke(0, 255, 0);
       strokeWeight(4);
