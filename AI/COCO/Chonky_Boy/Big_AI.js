@@ -89,7 +89,18 @@ function draw() {
           line(a.position.x, a.position.y, b.position.x, b.position.y);
         }
       }
-      console.log(pose);
+
+      //Just let the console print out some informations…
+      if(pose.score > 0.25){
+        console.log("------------------------------------");
+        console.log("Part:");
+        console.log(pose.part);
+        console.log("Confidence:");
+        console.log(pose.score);
+        console.log("Position:");
+        console.log(pose.position);
+        console.log("------------------------------------");
+      }
       /*-----------------------------------------------------------------------------------------------*/
     } else {
       stroke(0, 255, 0);
