@@ -66,9 +66,12 @@ function draw() {
       if (pose) {
         //Just let the console print out some informations…
         for (let i = 0; i < skeleton.length; i++) {
-          console.log(skeleton[i][0]);                                //Print out informations about detexted part
-        }                                                             //if parts should be detected specifically, use: pose.rightWrist (EX.)
-                                                                      //for their position just write pose.rightWrist.x (EX.) or .y)
+          for (let j = 0; j < skeleton.length; j++) {
+            console.log(skeleton[i][j+1]);                                //Print out informations about detexted part
+          }                                                             //if parts should be detected specifically, use: pose.rightWrist (EX.)
+        }                                                               //for their position just write pose.rightWrist.x (EX.) or .y)                                                      
+
+
         //Ellipse
         for (let i = 0; i < pose.keypoints.length; i++) {
           let x = pose.keypoints[i].position.x;
