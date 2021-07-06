@@ -155,7 +155,7 @@ int done(Votes, maxVotes, side_a, side_b){
 
   //Check weather or not the Voting time has exceeded and perform a recursive algorythm if it didn't
   if (Votes < maxVotes) {
-    election(Votes, side_a, side_b);
+    election(Votes, maxVotes, side_a, side_b);
   } else {
     printf("\nVoting's up. Time for the results:");
     printf("\n Side A: %d / Side B: %d", side_a, side_b);
