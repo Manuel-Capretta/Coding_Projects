@@ -5,7 +5,6 @@
 #include <string.h>
 
 void election();
-void Voter_define();
 int done();
 
 //Voter Entity Structure

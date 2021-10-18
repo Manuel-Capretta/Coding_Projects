@@ -67,7 +67,7 @@ function draw() {
         //Just let the console print out some informations…
         for (let i = 0; i < skeleton.length; i++) {
           for (let j = 0; j < skeleton.length; j++) {
-            console.log(skeleton[i][j+1]);                                //Print out informations about detexted part
+            console.log(skeleton[i][j+1]);                              //Print out informations about detexted part
           }                                                             //if parts should be detected specifically, use: pose.rightWrist (EX.)
         }                                                               //for their position just write pose.rightWrist.x (EX.) or .y)                                                      
 
