@@ -4,8 +4,9 @@
 #include <stdbool.h>
 #include <string.h>
 
+//Declare functions
 void election();
-int done();
+void done();
 
 //Voter Entity Structure
 struct Voter {
@@ -125,7 +126,7 @@ void election(Votes, maxVotes, side_a, side_b){
 
   //Check for the Vote given by the Voter 
   scanf("%d", & Input_vote);
-  if (Votes < maxVotes) {
+  if (Votes < maxVotes) { //still votes left
     if(Input_vote == 1){
       side_a++;
       Votes++;
@@ -149,7 +150,7 @@ void election(Votes, maxVotes, side_a, side_b){
 
 
 
-int done(Votes, maxVotes, side_a, side_b){
+void done(Votes, maxVotes, side_a, side_b){
   int voting_done = false;
 
   //Check weather or not the Voting time has exceeded and perform a recursive algorythm if it didn't
@@ -169,6 +170,6 @@ int done(Votes, maxVotes, side_a, side_b){
       voting_done = true;
     }
   }
-
-  return Votes, maxVotes, side_a, side_b;
 }
+
+//  && side_a < 6 || side_b < 6
