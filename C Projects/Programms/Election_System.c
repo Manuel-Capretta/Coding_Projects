@@ -172,4 +172,4 @@ void done(Votes, maxVotes, side_a, side_b){
   }
 }
 
-//  && side_a < 6 || side_b < 6
+// && side_a < 6 || side_b < 6
