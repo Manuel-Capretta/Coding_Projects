@@ -22,7 +22,7 @@ function gotDetections(error, results) {
 }
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(1500, 480);
   video = createCapture(VIDEO);
   video.size(640, 480);
   video.hide();
@@ -81,7 +81,10 @@ function draw() {
           text(conf, x, y + 24);                                      //show detected parts confidence
           //text(pose.part, x, y - 24);                               //show detected parts name
           
-          ellipse(x, y, 10, 10);                                      //Show a little circle at detected location                          
+          ellipse(x, y, 10, 10);                                      //Show a little circle at detected location    
+          
+          fill(0, 0, 0);                                     
+          rect(640, 0, 1000, 480);
         }
     
         for (let i = 0; i < skeleton.length; i++) {
