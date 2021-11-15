@@ -83,8 +83,8 @@ function draw() {
           
           ellipse(x, y, 10, 10);                                      //Show a little circle at detected location    
           
-          fill(0, 0, 0);                                     
-          rect(640, 0, 1000, 480);
+          /*fill(0, 0, 0);                                     
+          rect(640, 0, 1000, 480);*/
         }
     
         for (let i = 0; i < skeleton.length; i++) {
