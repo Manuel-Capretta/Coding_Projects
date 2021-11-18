@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class gameMaster {
-    public tile tileArr[] = new tile[9];
+    public tile tileArr[] = new tile[9]; //save tiles in an array
 
     int px = 50;
     int size = 50;

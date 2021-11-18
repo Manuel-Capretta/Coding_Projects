@@ -11,9 +11,10 @@ public class user {
         System.out.print("Input a number between 1-9: ");
         field = scan.nextInt();
 
-        while(field > 9 || field < 1){
-            field = scan.nextInt(); //rescan if number isn't valid
+        if(field > 9 || field < 1){
+            System.out.println("This isn't a number between 1 and 9 dummy. Try again");
             inputDone = false;      //thus, user input won't be seen as done
+            field = userInput();
         }
 
         inputDone = true;
