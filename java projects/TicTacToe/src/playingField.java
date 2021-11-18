@@ -15,22 +15,26 @@ public class playingField extends JFrame implements KeyListener, ActionListener 
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         addKeyListener(this);
-        /*Timer t = new Timer(1000000000, this);
-        t.start();*/
     }
 
     public void paint(Graphics draw) {
         gameMaster gameMaster = new gameMaster();
         gameMaster.setUp(); //setup all the tiles etc
-        //user1.userInput();
-        gameMaster.tileArr[5-1].xOn = true; //Put an X in the middle of the field
-        gameMaster.callSignChange();
+        if(!user1.inputDone) { //if no user input was done
+            int field = user1.userInput(gameMaster); //user can input a field on which he wants his sign to be drawn on
+            gameMaster.tileArr[field-1].xOn = true; //Put an X in the field users choice
+        }
+        if(user1.inputDone) { //if user has made his choice
+            gameMaster.callSignChange(); //change fields call sign
+        }
+        System.out.println("(re)Drawing Grid now...");
         gameMaster.drawGrid(draw);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(user1.inputDone){
+            user1.inputDone = false;
             repaint(); //refresh if user input was given
         }
     }

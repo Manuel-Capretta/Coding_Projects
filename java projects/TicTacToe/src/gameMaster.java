@@ -7,7 +7,7 @@ public class gameMaster {
     int size = 50;
 
     void setUp(){
-
+        System.out.println("Setting up...");
 
         //Create the 9 tiles
         tile tile1 = new tile(px, px, size, " ");
