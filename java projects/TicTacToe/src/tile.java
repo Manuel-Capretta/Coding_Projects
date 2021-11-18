@@ -11,7 +11,7 @@ public class tile {
     public boolean oOn;
 
 
-    public tile(int x, int y, int size, String call){
+    public tile(int x, int y, int size){
         this.x = x;
         this.y = y;
         this.size = size;

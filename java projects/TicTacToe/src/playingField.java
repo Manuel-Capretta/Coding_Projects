@@ -11,6 +11,10 @@ public class playingField extends JFrame implements KeyListener, ActionListener 
     int field1;
     int field2;
 
+    int turnCounter = 0;
+
+    gameMaster gameMaster = new gameMaster(); //game master object
+
     public playingField() {
         setTitle("Snake Game Board");
         setSize(500, 500);
@@ -21,7 +25,7 @@ public class playingField extends JFrame implements KeyListener, ActionListener 
     }
 
     public void paint(Graphics draw) {
-        gameMaster gameMaster = new gameMaster();
+
         gameMaster.setUp(); //setup all the tiles etc
 
         if(!user1.inputDone){
@@ -51,32 +55,48 @@ public class playingField extends JFrame implements KeyListener, ActionListener 
             gameMaster.drawGrid(draw);
         }
 
-        //check if user 1 has won
-        if(gameMaster.tileArr[0].xOn && gameMaster.tileArr[1].xOn && gameMaster.tileArr[2].xOn){
+
+        //check if user 1 or user 2 has won
+          if (
+                  (gameMaster.tileArr[0].xOn && gameMaster.tileArr[1].xOn && gameMaster.tileArr[2].xOn)
+                ||(gameMaster.tileArr[3].xOn && gameMaster.tileArr[4].xOn && gameMaster.tileArr[5].xOn)
+                ||(gameMaster.tileArr[6].xOn && gameMaster.tileArr[7].xOn && gameMaster.tileArr[8].xOn)
+                ||(gameMaster.tileArr[0].xOn && gameMaster.tileArr[3].xOn && gameMaster.tileArr[6].xOn)
+                ||(gameMaster.tileArr[1].xOn && gameMaster.tileArr[4].xOn && gameMaster.tileArr[7].xOn)
+                ||(gameMaster.tileArr[2].xOn && gameMaster.tileArr[5].xOn && gameMaster.tileArr[8].xOn)
+                ||(gameMaster.tileArr[0].xOn && gameMaster.tileArr[4].xOn && gameMaster.tileArr[8].xOn)
+                ||(gameMaster.tileArr[2].xOn && gameMaster.tileArr[4].xOn && gameMaster.tileArr[6].xOn)
+          ){
             System.out.println("User 1 Won!");
-        } else {
-            System.out.println("It's a draw");
+        } else if(
+                (gameMaster.tileArr[0].oOn && gameMaster.tileArr[1].oOn && gameMaster.tileArr[2].oOn)
+                ||(gameMaster.tileArr[3].oOn && gameMaster.tileArr[4].oOn && gameMaster.tileArr[5].oOn)
+                ||(gameMaster.tileArr[6].oOn && gameMaster.tileArr[7].oOn && gameMaster.tileArr[8].oOn)
+                ||(gameMaster.tileArr[0].oOn && gameMaster.tileArr[3].oOn && gameMaster.tileArr[6].oOn)
+                ||(gameMaster.tileArr[1].oOn && gameMaster.tileArr[4].oOn && gameMaster.tileArr[7].oOn)
+                ||(gameMaster.tileArr[2].oOn && gameMaster.tileArr[5].oOn && gameMaster.tileArr[8].oOn)
+                ||(gameMaster.tileArr[0].oOn && gameMaster.tileArr[4].oOn && gameMaster.tileArr[8].oOn)
+                ||(gameMaster.tileArr[2].oOn && gameMaster.tileArr[4].oOn && gameMaster.tileArr[6].oOn)
+          ){
+            System.out.println("User 2 Won!");
+        }else if(turnCounter != 9){
+            System.out.println("Next turn");
+            turnCounter++;
             repaint();
+        } else {
+            System.out.println("It's a draw!");
         }
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-
     }
-
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
-
     @Override
     public void keyPressed(KeyEvent e) {
-
     }
-
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
 }
