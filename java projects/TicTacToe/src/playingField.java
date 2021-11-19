@@ -69,7 +69,7 @@ public class playingField extends JFrame implements KeyListener, ActionListener 
           ){
             System.out.println("User 1 Won!");
         } else if(
-                (gameMaster.tileArr[0].oOn && gameMaster.tileArr[1].oOn && gameMaster.tileArr[2].oOn)
+                  (gameMaster.tileArr[0].oOn && gameMaster.tileArr[1].oOn && gameMaster.tileArr[2].oOn)
                 ||(gameMaster.tileArr[3].oOn && gameMaster.tileArr[4].oOn && gameMaster.tileArr[5].oOn)
                 ||(gameMaster.tileArr[6].oOn && gameMaster.tileArr[7].oOn && gameMaster.tileArr[8].oOn)
                 ||(gameMaster.tileArr[0].oOn && gameMaster.tileArr[3].oOn && gameMaster.tileArr[6].oOn)
