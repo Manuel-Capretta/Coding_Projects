@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2023853e-21f8-40ad-880c-c29b0b23858c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Automat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Automat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../menu/src/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../menu/src/Menu.java" afterDir="false" />
+    <list default="true" id="2023853e-21f8-40ad-880c-c29b0b23858c" name="Changes" comment="safety push">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Automat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Automat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpellNums" beforeDir="false" afterPath="$PROJECT_DIR$/../SpellNums" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../menu/out/production/menu/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../menu/out/production/menu/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../menu/out/production/menu/menuElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../menu/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../menu/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../menu/src/menuElement.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +70,14 @@
       <option name="presentableId" value="Default" />
       <updated>1637828793825</updated>
     </task>
+    <task id="LOCAL-00001" summary="safety push">
+      <created>1637836798313</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637836798313</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,5 +90,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="safety push" />
+    <option name="LAST_COMMIT_MESSAGE" value="safety push" />
   </component>
 </project>
