@@ -5,9 +5,9 @@ public class Automat {
         //get user Data
         String userName = stringInput();
         System.out.print("What's your budget? ");
-        int userMoney = intInput();
+        double userMoney = intInput();
         System.out.print("How long we fly? ");
-        int userDist = intInput();
+        double userDist = intInput();
         boolean returnToHome = boolInput();
 
         //Create user Obj & set it up
@@ -28,9 +28,9 @@ public class Automat {
         return strVal;
     }
 
-    public static int intInput() {
+    public static double intInput() {
         Scanner scanner = new Scanner(System.in);
-        int intVal = scanner.nextInt();
+        double intVal = scanner.nextDouble();
         return intVal;
     }
 
@@ -87,9 +87,9 @@ public class Automat {
                 if (user.targetDestDist == user.ticketArr[i].reach && user.money >= user.ticketArr[i].cost) {
                     System.out.println("Excellent choice");
                 } else if (user.targetDestDist > user.ticketArr[i].reach && user.money >= user.ticketArr[i].cost) {
-                    System.out.println("it will reach but u need more tickets");
+                    System.out.println("u need more tickets");
                 } else if (user.targetDestDist < user.ticketArr[i].reach && user.money >= user.ticketArr[i].cost) {
-                    System.out.println("ticket won't reach");
+                    System.out.println("ticket's too much");
                 } else {
                     System.out.println("Poor mf");
                 }

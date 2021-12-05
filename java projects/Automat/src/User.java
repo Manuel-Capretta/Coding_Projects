@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class User {
     String name;
     double money;
-    int targetDestDist;
+    double targetDestDist;
     boolean targetDestDistHome;
 
     Ticket ticketArr[] = new Ticket[3];
 
-    User(String name, double money, int targetDestDist, boolean targetDestDistHome){
+    User(String name, double money, double targetDestDist, boolean targetDestDistHome){
         this.name = name;
         this.money = money;
         this.targetDestDist = targetDestDist;
