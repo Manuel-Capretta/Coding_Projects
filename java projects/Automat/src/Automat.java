@@ -21,13 +21,6 @@ public class Automat {
         //System.out.println(user1.name + " " + user1.money + " " + user1.targetDestDist + " " + user1.targetDestDistHome);
     }
 
-    public static String stringInput() {
-        System.out.print("What's your name? ");
-        Scanner scanner = new Scanner(System.in);
-        String strVal = scanner.nextLine();
-        return strVal;
-    }
-
     public static double intInput() {
         Scanner scanner = new Scanner(System.in);
         double intVal = scanner.nextDouble();
