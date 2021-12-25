@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class salary {
+public class salary {
+    int value;
+
+
 }

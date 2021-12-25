@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public class values {
+public class values extends salary{
+    String name;
+    int percentage;
+
+
 }

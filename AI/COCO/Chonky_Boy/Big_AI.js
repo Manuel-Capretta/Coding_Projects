@@ -8,9 +8,17 @@ let poseNet;
 let pose;
 let skeleton;
 
+//other variables
+let counter;
+let shift = 500;
+let refreshRate = 2; //refresh every […] pictures 
+
 function preload() {
   //Load COCO-SSD
   detector = ml5.objectDetector('cocossd');
+
+  //set counter
+  counter = 1;
 }
 
 function gotDetections(error, results) {
@@ -22,7 +30,7 @@ function gotDetections(error, results) {
 }
 
 function setup() {
-  createCanvas(1500, 480);
+  createCanvas(1140, 480);
   video = createCapture(VIDEO);
   video.size(640, 480);
   video.hide();
@@ -46,9 +54,11 @@ function modelLoaded() {
 }
 
 function draw() {
+  counter++;
   image(video, 0, 0);
-  let img;
+  let img; 
   img = loadImage('s_big.png');
+ 
 
   for (let i = 0; i < detections.length; i++) {
     let object = detections[i];
@@ -81,18 +91,27 @@ function draw() {
           text(conf, x, y + 24);                                      //show detected parts confidence
           //text(pose.part, x, y - 24);                               //show detected parts name
           
-          ellipse(x, y, 10, 10);                                      //Show a little circle at detected location    
-          
-          /*fill(0, 0, 0);                                     
-          rect(640, 0, 1000, 480);*/
+          ellipse(x, y, 10, 10);                                      //Show a little circle at detected location
+
+          //2nd ellipse
+          fill(0, 255, 0);
+          ellipse(x+500, y, 10, 10);
+
+          //2nd ellipse delete test
+          fill(0, 0, 0);
+          if(counter%refreshRate == 0){ //refresh rate                    
+            rect(640, 0, shift, 480);
+          }
         }
+    
     
         for (let i = 0; i < skeleton.length; i++) {
           let a = skeleton[i][0];
           let b = skeleton[i][1];
           strokeWeight(2);
           stroke(255);
-          line(a.position.x, a.position.y, b.position.x, b.position.y); //line between detected parts
+          line(a.position.x, a.position.y, b.position.x, b.position.y); //line between detected parts (the ones that weren't shifted)
+          line(a.position.x+shift, a.position.y+shift, b.position.x+shift, b.position.y+shift); //line between detected parts (the ones that were shifted)
         }
       }
 /*-----------------------------------------------------------------------------------------------*/
