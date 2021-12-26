@@ -97,9 +97,9 @@ function draw() {
           fill(0, 255, 0);
           ellipse(x+500, y, 10, 10);
 
-          //2nd ellipse delete test
+          //2nd ellipse delete
           fill(0, 0, 0);
-          if(counter%refreshRate == 0){ //refresh rate                    
+          if(counter % refreshRate == 0){ //refresh rate                    
             rect(640, 0, shift, 480);
           }
         }
