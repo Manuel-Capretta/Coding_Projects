@@ -10,8 +10,8 @@ let skeleton;
 
 //other variables
 let counter;
-let shift = 500;
-let refreshRate = 2; //refresh every […] pictures 
+let shift = 750;
+let refreshRate = 3; //refresh every […] pictures 
 
 function preload() {
   //Load COCO-SSD
@@ -30,7 +30,7 @@ function gotDetections(error, results) {
 }
 
 function setup() {
-  createCanvas(1140, 480);
+  createCanvas(1640, 480);
   video = createCapture(VIDEO);
   video.size(640, 480);
   video.hide();
@@ -95,12 +95,13 @@ function draw() {
 
           //2nd ellipse
           fill(0, 255, 0);
-          ellipse(x+500, y, 10, 10);
+          ellipse(x+shift, y, 10, 10);
 
           //2nd ellipse delete
           fill(0, 0, 0);
           if(counter % refreshRate == 0){ //refresh rate                    
-            rect(640, 0, shift, 480);
+            rect(640, 0, 1000, 480);
+            counter = 0;
           }
         }
     
@@ -111,7 +112,6 @@ function draw() {
           strokeWeight(2);
           stroke(255);
           line(a.position.x, a.position.y, b.position.x, b.position.y); //line between detected parts (the ones that weren't shifted)
-          line(a.position.x+shift, a.position.y+shift, b.position.x+shift, b.position.y+shift); //line between detected parts (the ones that were shifted)
         }
       }
 /*-----------------------------------------------------------------------------------------------*/
