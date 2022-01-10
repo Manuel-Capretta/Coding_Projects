@@ -11,7 +11,7 @@ let skeleton;
 //other variables
 let counter;
 let shift = 750;
-let refreshRate = 3; //refresh every […] pictures 
+let refreshRate = 2; //refresh every […] pictures 
 
 function preload() {
   //Load COCO-SSD
@@ -111,7 +111,7 @@ function draw() {
           let b = skeleton[i][1];
           strokeWeight(2);
           stroke(255);
-          line(a.position.x, a.position.y, b.position.x, b.position.y); //line between detected parts (the ones that weren't shifted)
+          line(a.position.x+shift, a.position.y+shift, b.position.x+shift, b.position.y+shift); //line between detected parts (the ones that weren't shifted)
         }
       }
 /*-----------------------------------------------------------------------------------------------*/
