@@ -113,11 +113,9 @@ public class store {
         lagerProdukte.remove(iID);
 
         for(int i = iID; i < lagerProdukte.size(); i++){
-            //lagerProdukte.set(i, lagerProdukte.get(i));   // -> eigentliches aufrücken ohne id
             LagerBestand temp = lagerProdukte.get(i);
             temp.ID--;
             lagerProdukte.set(i, temp);
-
         }
     }
 
